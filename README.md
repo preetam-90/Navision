@@ -22,3 +22,4 @@ A modern movie streaming platform built with Next.js
 2. Install dependencies with `npm install` or `pnpm install`
 3. Create a `.env.local` file with your TMDB API key
 4. Run `npm run dev` or `pnpm dev` to start the development server
+# Test commit
