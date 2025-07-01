@@ -26,6 +26,12 @@ import { Icons } from '@/components/icons'
 
 import { Badge } from './ui/badge'
 
+// Add a utility function to safely handle clipboard operations
+const safeNavigator = typeof window !== 'undefined' ? window.navigator : null
+const hasClipboard = safeNavigator && 
+                    typeof safeNavigator.clipboard !== 'undefined' && 
+                    typeof safeNavigator.clipboard.writeText === 'function'
+
 const handleUniqueTitle = (movie: MediaType, isDuplicate: boolean) => {
   if (!isDuplicate) return movie.title
 
@@ -218,35 +224,6 @@ export function CommandMenu({ ...props }: CommandDialogProps) {
             >
               <Home className="mr-2 size-4" />
               Home
-            </CommandItem>
-            <CommandItem
-              className="cursor-pointer"
-              onSelect={() =>
-                runCommand(() =>
-                  window.open(`https://www.mohamedgado.com/`, '_blank')
-                )
-              }
-            >
-              <div className="flex items-center gap-4">
-                <Avatar>
-                  <AvatarImage src="/personal-logo.png" />
-                  <AvatarFallback>G</AvatarFallback>
-                </Avatar>
-                Portfolio
-              </div>
-            </CommandItem>
-            <CommandItem
-              className="cursor-pointer"
-              onSelect={() =>
-                runCommand(() =>
-                  window.open(`https://buymeacoffee.com/vetteotp`, '_blank')
-                )
-              }
-            >
-              <div className="flex items-center gap-4">
-                <Icons.buyMeACoffee className="size-5" />
-                Buy me a coffee
-              </div>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
