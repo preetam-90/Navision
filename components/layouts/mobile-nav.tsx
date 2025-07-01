@@ -5,17 +5,56 @@ import { usePathname } from 'next/navigation'
 import { NavItem } from '@/types/navbar'
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
-import { Button, buttonVariants } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Button } from '@/components/ui/button'
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { Icons } from '@/components/icons'
 
 interface MobileNavProps {
   items?: NavItem[]
 }
 
+// Create a VisuallyHidden component for accessibility
+const VisuallyHidden = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <span 
+      style={{
+        border: 0,
+        clip: 'rect(0 0 0 0)',
+        height: '1px',
+        margin: '-1px',
+        overflow: 'hidden',
+        padding: 0,
+        position: 'absolute',
+        width: '1px',
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {children}
+    </span>
+  );
+};
+
 export function MobileNav({ items }: MobileNavProps) {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
+  const [mounted, setMounted] = React.useState(false)
+  
+  // Only render on client-side to prevent hydration issues
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  if (!mounted) {
+    return (
+      <Button
+        variant="ghost"
+        className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 lg:hidden"
+      >
+        <Icons.menu className="size-6" />
+        <span className="sr-only">Toggle Menu</span>
+      </Button>
+    )
+  }
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -32,6 +71,7 @@ export function MobileNav({ items }: MobileNavProps) {
         side="left"
         className="inset-y-0 flex h-auto w-[350px] flex-col p-0"
       >
+        <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
         <div className="px-7 py-4">
           <Link
             aria-label="Home"
@@ -43,7 +83,7 @@ export function MobileNav({ items }: MobileNavProps) {
             <span className="text-lg font-bold">{siteConfig.name}</span>
           </Link>
         </div>
-        <div className="my-4 flex flex-1 flex-col gap-4 px-9 pb-2">
+        <div className="my-4 flex flex-1 flex-col gap-4 px-9 pb-10">
           {items?.map((item, index) => (
             <div className="border-b-2 last:border-b-0" key={item.title}>
               <MobileLink
@@ -59,53 +99,18 @@ export function MobileNav({ items }: MobileNavProps) {
             </div>
           ))}
         </div>
-        <div className="space-y-6 px-9 pb-10">
-          <Link
-            href="https://www.profitableratecpm.com/hwxt5zz7i?key=a5dba98951e6803fa620281826ca66d3"
-            target="_blank"
-            rel="noreferrer"
-            className={cn(
-              buttonVariants({
-                variant: 'default',
-                size: 'default',
-                className: 'w-full',
-              }),
-              'text-white'
-            )}
-          >
-            <Icons.buyMeACoffee className="mr-2 size-5" />
-            Support
-          </Link>
-          <Link
+        
+        {/* Fixed position at the bottom */}
+        <div className="border-t border-border px-9 py-4 mt-auto">
+          <Link 
             href={siteConfig.links.buyMeACoffee}
             target="_blank"
             rel="noreferrer"
-            className={cn(
-              buttonVariants({
-                variant: 'default',
-                size: 'default',
-                className: 'w-full',
-              }),
-              'text-white'
-            )}
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-primary-foreground hover:bg-primary/90 w-full justify-center"
           >
-            <Icons.buyMeACoffee className="mr-2 size-5" />
-            Buy me a coffee
-          </Link>
-          <Link
-            href={siteConfig.links.website}
-            target="_blank"
-            rel="noreferrer"
-            className={cn(
-              buttonVariants({
-                variant: 'default',
-                size: 'default',
-                className: 'w-full',
-              }),
-              'text-white'
-            )}
-          >
-            Visit my portfolio
+            <Icons.buyMeACoffee className="size-5" />
+            <span>Buy me a coffee</span>
           </Link>
         </div>
       </SheetContent>
