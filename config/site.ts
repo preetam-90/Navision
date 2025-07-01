@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: 'Reely',
-  description: 'Reely is a movie and tv show tracker built by Mohamed Gado.',
+  name: 'Navision',
+  description: 'Navision is a movie and tv show streaming platform.',
   mainNav: [
     {
       title: 'Home',
@@ -33,27 +33,27 @@ export const siteConfig = {
   personalLogo:
     'https://pbs.twimg.com/profile_images/1446549954231738370/IVkXC16N_400x400.jpg',
   links: {
-    twitter: 'https://twitter.com/Sadge1996',
-    github: 'https://github.com/Vette1123',
-    website: 'https://www.mohamedgado.com/',
-    buyMeACoffee: 'https://buymeacoffee.com/vetteotp',
+    twitter: 'https://twitter.com/preetam',
+    github: 'https://github.com/preetam-90',
+    website: 'https://www.navision.com/',
+    buyMeACoffee: 'https://buymeacoffee.com/preetam',
   },
   openGraph: {
     locale: 'en_US',
     type: 'website',
   },
-  email: 'boogado@yahoo.com',
-  websiteURL: 'https://www.reely.site',
-  twitterTag: '@Sadge1996',
+  email: 'contact@navision.com',
+  websiteURL: 'https://www.navision.com',
+  twitterTag: '@preetam',
   image:
     'https://pbs.twimg.com/profile_images/1446549954231738370/IVkXC16N_400x400.jpg',
   keywords: [
-    'Reely',
-    'Reely Site',
-    'Reely Tracker',
-    'Movie Tracker',
-    'TV Show Tracker',
-    'Reely Live',
+    'Navision',
+    'Navision Site',
+    'Navision Streaming',
+    'Movie Streaming',
+    'TV Show Streaming',
+    'Navision Live',
     'Software Engineer',
     'Frontend Engineer',
     'Web Developer',
@@ -61,9 +61,7 @@ export const siteConfig = {
     'TypeScript',
     'JavaScript',
     'Node.js',
-    'Mohamed Gado',
-    'Gado',
-    'Gado Mohamed',
+    'Preetam',
     'React Developer',
     'React Engineer',
     'React.js',
