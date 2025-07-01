@@ -1,5 +1,6 @@
 'use client'
 
+import * as React from 'react'
 import Link from 'next/link'
 
 import { siteConfig } from '@/config/site'
@@ -13,6 +14,22 @@ import { MobileNav } from '@/components/layouts/mobile-nav'
 
 export function SiteHeader() {
   const { isShowNavBackground } = useNavbarScrollOverlay()
+  const [mounted, setMounted] = React.useState(false)
+  
+  // Only render on client-side to prevent hydration issues
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+  
+  if (!mounted) {
+    // Return a simple placeholder during SSR
+    return (
+      <header className="fixed inset-x-0 top-0 z-40 w-full h-16">
+        <div className="container h-full"></div>
+      </header>
+    )
+  }
+  
   return (
     <header
       className={cn(
@@ -43,21 +60,6 @@ export function SiteHeader() {
               >
                 <Icons.gitHub className="size-5" />
                 <span className="sr-only">GitHub</span>
-              </div>
-            </Link>
-            <Link
-              href={siteConfig.links.twitter}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: 'icon',
-                  variant: 'ghost',
-                })}
-              >
-                <Icons.twitter className="size-5 fill-current" />
-                <span className="sr-only">Twitter</span>
               </div>
             </Link>
             <Link
