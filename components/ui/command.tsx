@@ -2,12 +2,24 @@
 
 import * as React from 'react'
 import { DialogProps } from '@radix-ui/react-dialog'
-import * as VisuallyHidden from '@radix-ui/react-visually-hidden'
 import { Command as CommandPrimitive } from 'cmdk'
 import { Loader, Search } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
-import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog'
+import { Dialog, DialogContent } from '@/components/ui/dialog'
+
+// Safely handle clipboard API
+if (typeof window !== 'undefined' && typeof navigator !== 'undefined') {
+  if (!navigator.clipboard) {
+    Object.defineProperty(navigator, 'clipboard', {
+      value: {
+        writeText: () => Promise.resolve(),
+        readText: () => Promise.resolve('')
+      },
+      writable: false
+    });
+  }
+}
 
 const Command = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive>,
@@ -26,13 +38,19 @@ Command.displayName = CommandPrimitive.displayName
 
 interface CommandDialogProps extends DialogProps {}
 
+// Client-side only component to prevent hydration issues
 const CommandDialog = ({ children, ...props }: CommandDialogProps) => {
+  const [mounted, setMounted] = React.useState(false);
+  
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  if (!mounted) return null;
+  
   return (
     <Dialog {...props}>
-      <DialogContent className="overflow-hidden p-0 shadow-lg">
-        <VisuallyHidden.Root>
-          <DialogTitle>Search</DialogTitle>
-        </VisuallyHidden.Root>
+      <DialogContent className="overflow-hidden p-0 shadow-lg" title="Search Command Menu">
         <Command className="[&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-group]:not([hidden])_~[cmdk-group]]:pt-0 [&_[cmdk-group]]:px-2 [&_[cmdk-input-wrapper]_svg]:h-5 [&_[cmdk-input-wrapper]_svg]:w-5 [&_[cmdk-input]]:h-12 [&_[cmdk-item]]:px-2 [&_[cmdk-item]]:py-3 [&_[cmdk-item]_svg]:h-5 [&_[cmdk-item]_svg]:w-5">
           {children}
         </Command>
