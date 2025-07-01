@@ -34,7 +34,7 @@ export function DeleteHistoryAlert({ onDelete }: DeleteHistoryAlertProps) {
           Clear history
         </Button>
       </AlertDialogTrigger>
-      <AlertDialogContent>
+      <AlertDialogContent title="Delete Watch History Confirmation">
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
