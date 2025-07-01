@@ -8,3 +8,10 @@ A modern movie streaming platform built with Next.js
 - Search for content
 - View detailed information about movies and TV shows
 - Keep track of watch history
+
+## Technologies
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- React Query
