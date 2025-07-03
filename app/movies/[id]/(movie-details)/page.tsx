@@ -9,9 +9,13 @@ import { getPosterImageURL } from '@/lib/utils'
 import { MoviesDetailsContent } from '@/components/media/details-content'
 import { MovieDetailsHero } from '@/components/media/details-hero'
 
-type PageProps = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+interface PageParams {
+  id: string;
+}
+
+interface PageProps {
+  params: PageParams;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata(
@@ -39,7 +43,7 @@ export async function generateMetadata(
   }
 }
 
-const MoviePage = async ({ params }: PageProps) => {
+export default async function MoviePage({ params }: PageProps) {
   const { movieCredits, movieDetails, similarMovies, recommendedMovies } =
     await populateMovieDetailsPage(params.id)
 
@@ -55,5 +59,3 @@ const MoviePage = async ({ params }: PageProps) => {
     </header>
   )
 }
-
-export default MoviePage

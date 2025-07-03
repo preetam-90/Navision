@@ -9,9 +9,13 @@ import { getPosterImageURL } from '@/lib/utils'
 import { SeriesDetailsContent } from '@/components/series/details-content'
 import { SeriesDetailsHero } from '@/components/series/details-hero'
 
-type PageProps = {
-  params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+interface PageParams {
+  id: string;
+}
+
+interface PageProps {
+  params: PageParams;
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata(
@@ -39,7 +43,7 @@ export async function generateMetadata(
   }
 }
 
-const TVSeries = async ({ params }: PageProps) => {
+export default async function TVSeries({ params }: PageProps) {
   const { seriesDetails, seriesCredits, similarSeries, recommendedSeries } =
     await populateSeriesDetailsPageData(params.id)
 
@@ -55,5 +59,3 @@ const TVSeries = async ({ params }: PageProps) => {
     </header>
   )
 }
-
-export default TVSeries
