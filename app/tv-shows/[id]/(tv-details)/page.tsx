@@ -9,13 +9,9 @@ import { getPosterImageURL } from '@/lib/utils'
 import { SeriesDetailsContent } from '@/components/series/details-content'
 import { SeriesDetailsHero } from '@/components/series/details-hero'
 
-interface PageParams {
-  id: string;
-}
-
-interface PageProps {
-  params: PageParams & { then?: never };
-  searchParams: { [key: string]: string | string[] | undefined };
+type PageProps = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
 export async function generateMetadata(
