@@ -11,7 +11,7 @@ import { fetchClient } from '@/lib/fetch-client'
 import { tvType } from '@/lib/tmdbConfig'
 
 const getLatestTrendingSeries = async (params: Param = {}) => {
-  const url = `${tvType.trending}/tv/day?language=en-US`
+  const url = `trending/tv/day?language=en-US`
   const rawData = await fetchClient.get<SeriesResponse>(url, params, true)
   return seriesDTO(rawData)
 }

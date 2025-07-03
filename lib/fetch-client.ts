@@ -70,6 +70,19 @@ export const fetchClient = {
     params?: Record<string, string | number>,
     isHeaderAuth = false
   ): Promise<T> => {
+    // Validate API configuration
+    if (!apiConfig.baseUrl) {
+      throw new Error('TMDB Base URL is not configured. Check your environment variables.')
+    }
+
+    if (!isHeaderAuth && !apiConfig.apiKey) {
+      throw new Error('TMDB API Key is not configured. Check your environment variables.')
+    }
+
+    if (isHeaderAuth && !apiConfig.headerKey) {
+      throw new Error('TMDB Header Key is not configured. Check your environment variables.')
+    }
+
     const query = {
       ...params,
       ...(!isHeaderAuth && { api_key: apiConfig.apiKey! }),
@@ -80,29 +93,44 @@ export const fetchClient = {
     const cacheKey = generateCacheKey(url, query)
 
     try {
-      const res = await fetch(
-        `${apiConfig.baseUrl}${queryString.stringifyUrl({ url, query })}`,
-        {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            'Cache-Control': cacheConfig.cacheControl,
-            'CF-Cache-Tag': cacheConfig.tags.join(','),
-            'X-Cache-Key': cacheKey,
-            ...(isHeaderAuth && {
-              Authorization: `Bearer ${apiConfig.headerKey}`,
-            }),
-          },
-          // Next.js caching with optimized revalidation
-          next: { 
-            revalidate: cacheConfig.revalidate,
-            tags: [...cacheConfig.tags, cacheKey],
-          },
-        }
-      )
+      const fullUrl = `${apiConfig.baseUrl}/${url}`
+      const queryStringUrl = queryString.stringifyUrl({ url: fullUrl, query })
 
+      const headers: Record<string, string> = {
+        'Content-Type': 'application/json',
+        'Cache-Control': cacheConfig.cacheControl,
+        'CF-Cache-Tag': cacheConfig.tags.join(','),
+        'X-Cache-Key': cacheKey,
+      }
+
+      // Add authorization header if using header authentication
+      if (isHeaderAuth) {
+        headers['Authorization'] = `Bearer ${apiConfig.headerKey}`
+      }
+
+      const res = await fetch(queryStringUrl, {
+        method: 'GET',
+        headers,
+        // Next.js caching with optimized revalidation
+        next: { 
+          revalidate: cacheConfig.revalidate,
+          tags: [...cacheConfig.tags, cacheKey],
+        },
+      })
+
+      // Enhanced error handling
       if (!res.ok) {
-        throw new Error(`TMDB API error: ${res.status} ${res.statusText}`)
+        const errorBody = await res.text()
+        console.error(`[TMDB API Error] Status: ${res.status}, URL: ${queryStringUrl}, Body: ${errorBody}`)
+        throw new Error(`TMDB API error: ${res.status} ${res.statusText} - ${errorBody}`)
+      }
+
+      // Robust JSON parsing with error handling
+      const contentType = res.headers.get('content-type')
+      if (!contentType || !contentType.includes('application/json')) {
+        const textBody = await res.text()
+        console.error(`[TMDB API Error] Non-JSON response: ${textBody}`)
+        throw new Error('Expected JSON response from TMDB API')
       }
 
       const data = await res.json()
@@ -115,7 +143,9 @@ export const fetchClient = {
       return data
     } catch (error: any) {
       console.error(`[Fetch Error] ${cacheKey}:`, error.message)
-      throw error
+      
+      // Rethrow with additional context
+      throw new Error(`Failed to fetch from TMDB: ${error.message}. URL: ${url}`)
     }
   },
 
