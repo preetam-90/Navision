@@ -5,16 +5,19 @@ import {
   populateSeriesDetailsPageData,
 } from '@/services/series'
 
-import { PageDetailsProps } from '@/types/page-details'
 import { getPosterImageURL } from '@/lib/utils'
 import { SeriesDetailsContent } from '@/components/series/details-content'
 import { SeriesDetailsHero } from '@/components/series/details-hero'
 
+type PageProps = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
 export async function generateMetadata(
-  props: PageDetailsProps,
+  { params }: PageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const params = await props.params
   // read route params
   const id = params.id
 
@@ -36,10 +39,9 @@ export async function generateMetadata(
   }
 }
 
-const TVSeries = async (props: PageDetailsProps) => {
-  const params = await props.params
+const TVSeries = async ({ params }: PageProps) => {
   const { seriesDetails, seriesCredits, similarSeries, recommendedSeries } =
-    await populateSeriesDetailsPageData(params?.id)
+    await populateSeriesDetailsPageData(params.id)
 
   return (
     <header className="relative">
