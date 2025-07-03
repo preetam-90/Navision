@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { CalendarDays } from 'lucide-react'
@@ -12,13 +12,7 @@ import {
   itemRedirect,
   numberRounder,
 } from '@/lib/utils'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from '@/components/ui/hover-card'
 import { BlurredImage } from '@/components/blurred-image'
 
 interface CardProps {
@@ -32,36 +26,37 @@ export const Card = ({
   itemType = 'movie',
   isTruncateOverview = true,
 }: CardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
-    <HoverCard>
-      <HoverCardTrigger asChild>
-        {item?.poster_path && (
-          <Link href={`${itemRedirect(itemType)}/${item.id}`}>
-            <motion.div
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
-              className="pointer-events-none lg:pointer-events-auto"
-            >
-              <motion.div className="group relative" variants={CARD_VARIANT}>
-                <BlurredImage
-                  src={`${getPosterImageURL(item.poster_path)}`}
-                  alt="Movie"
-                  width={250}
-                  height={375}
-                  className="cursor-pointer rounded-md object-cover shadow-xl"
-                />
-              </motion.div>
+    <div 
+      className="relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {item?.poster_path && (
+        <Link href={`${itemRedirect(itemType)}/${item.id}`}>
+          <motion.div
+            initial="rest"
+            whileHover="hover"
+            animate="rest"
+            className="pointer-events-none lg:pointer-events-auto"
+          >
+            <motion.div className="group relative" variants={CARD_VARIANT}>
+              <BlurredImage
+                src={`${getPosterImageURL(item.poster_path)}`}
+                alt="Movie"
+                width={250}
+                height={375}
+                className="cursor-pointer rounded-md object-cover shadow-xl"
+              />
             </motion.div>
-          </Link>
-        )}
-      </HoverCardTrigger>
-      <HoverCardContent className="hidden w-80 md:block" side="right">
-        <div className="flex justify-between space-x-4">
-          <Avatar>
-            <AvatarImage src="/personal-logo.png" />
-            <AvatarFallback>VC</AvatarFallback>
-          </Avatar>
+          </motion.div>
+        </Link>
+      )}
+      
+      {isHovered && (
+        <div className="absolute left-full ml-2 hidden w-80 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none z-50 md:block">
           <div className="space-y-1">
             <div className="flex items-center justify-between gap-2">
               <h4 className="text-sm font-semibold">
@@ -84,7 +79,7 @@ export const Card = ({
             </div>
           </div>
         </div>
-      </HoverCardContent>
-    </HoverCard>
+      )}
+    </div>
   )
 }
