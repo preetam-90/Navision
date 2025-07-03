@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "next.config.mjs",
+      "use": "@vercel/next"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_TMDB_API_KEY": "@tmdb_api_key",
+    "NEXT_PUBLIC_TMDB_BASEURL": "https://api.themoviedb.org/3",
+    "NEXT_PUBLIC_IMAGE_CACHE_HOST_URL": "https://image.tmdb.org/t/p"
+  },
+  "build": {
+    "env": {
+      "NEXT_PUBLIC_TMDB_API_KEY": "@tmdb_api_key"
+    }
+  }
+} 

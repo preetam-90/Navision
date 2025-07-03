@@ -3,16 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier:format": "prettier --write .",
-    "prettier:check": "prettier --check .",
-    "build:worker": "pnpm opennextjs-cloudflare build",
-    "preview:worker": "pnpm opennextjs-cloudflare preview",
-    "preview": "pnpm build:worker && pnpm preview:worker",
-    "deploy": "pnpm build:worker && pnpm opennextjs-cloudflare deploy"
+    "preview": "next build && next start",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@next/third-parties": "15.3.3",

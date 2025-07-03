@@ -1,80 +1,35 @@
-import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
+import { fileURLToPath } from 'url'
+import createJiti from 'jiti'
 
-initOpenNextCloudflareForDev()
+const jiti = createJiti(fileURLToPath(import.meta.url))
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ['images.unsplash.com', 'image.tmdb.org', 'plus.unsplash.com'],
-    unoptimized: true,
-  },
-  typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
-  
-  // Optimize for Cloudflare Workers
-  output: 'standalone',
-  
-  // Custom headers for better caching
-  async headers() {
-    return [
-      {
-        source: '/api/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=3600',
-          },
-          {
-            key: 'CF-Cache-Tag',
-            value: 'api-data',
-          },
-          {
-            key: 'Vary',
-            value: 'Accept-Encoding, Accept-Language',
-          },
-        ],
-      },
-      {
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-          {
-            key: 'CF-Cache-Tag',
-            value: 'static-assets',
-          },
-        ],
-      },
-      {
-        source: '/_next/image',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=86400, s-maxage=2592000, stale-while-revalidate=86400',
-          },
-          {
-            key: 'CF-Cache-Tag',
-            value: 'images',
-          },
-        ],
-      },
-      {
-        source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=300, s-maxage=3600, stale-while-revalidate=1800',
-          },
-          {
-            key: 'CF-Cache-Tag',
-            value: 'pages',
-          },
-        ],
-      },
-    ]
-  },
+const defineNextConfig = () => {
+  /** @type {import('next').NextConfig} */
+  const nextConfig = {
+    reactStrictMode: true,
+    swcMinify: true,
+    images: {
+      domains: ['image.tmdb.org', 'localhost'],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'image.tmdb.org',
+          port: '',
+          pathname: '/t/p/**',
+        },
+      ],
+    },
+    env: {
+      NEXT_PUBLIC_TMDB_BASEURL: process.env.NEXT_PUBLIC_TMDB_BASEURL,
+      NEXT_PUBLIC_IMAGE_CACHE_HOST_URL: process.env.NEXT_PUBLIC_IMAGE_CACHE_HOST_URL,
+    },
+    // Vercel-specific optimizations
+    compiler: {
+      removeConsole: process.env.NODE_ENV === 'production',
+    },
+  }
+
+  return nextConfig
 }
 
-export default nextConfig
+export default defineNextConfig()
