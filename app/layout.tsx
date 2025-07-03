@@ -87,13 +87,13 @@ export default function RootLayout({ children, modal }: RootLayoutProps) {
         <head />
         <body
           className={cn(
-            'min-h-screen scroll-smooth bg-background font-sans antialiased',
+            'min-h-screen scroll-smooth bg-background font-sans antialiased p-0',
             fontSans.variable
           )}
         >
-          <div className="flex flex-col">
+          <div className="flex flex-col p-0 m-0">
             <SiteHeader />
-            <div className="h-full flex-1 overflow-x-hidden">
+            <div className="h-full flex-1 overflow-x-hidden p-0">
               <QueryProvider>
                 <CSPostHogProvider>{children}</CSPostHogProvider>
               </QueryProvider>

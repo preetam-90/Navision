@@ -26,12 +26,12 @@ interface ListProps {
 
 export const List = ({ title, items, itemType = 'movie' }: ListProps) => {
   return (
-    <nav className="py-10 w-full">
+    <nav className="py-10 w-full pl-0">
       <motion.div
         initial="rest"
         whileHover="hover"
         animate="rest"
-        className="w-fit"
+        className="w-fit ml-4 md:ml-6"
       >
         <Link
           href={itemRedirect(itemType)}
@@ -58,10 +58,10 @@ export const List = ({ title, items, itemType = 'movie' }: ListProps) => {
         </Link>
       </motion.div>
       {items.length === 0 && (
-        <p className="text-lg text-gray-400">No items to show</p>
+        <p className="text-lg text-gray-400 ml-4 md:ml-6">No items to show</p>
       )}
       {items.length > 0 && (
-        <div className="w-full overflow-hidden">
+        <div className="w-full overflow-hidden pl-0">
           <Splide
             options={{
               rewind: true,
@@ -70,7 +70,7 @@ export const List = ({ title, items, itemType = 'movie' }: ListProps) => {
               pagination: false,
               autoWidth: true,
               width: '100%',
-              padding: { left: 0, right: '1rem' },
+              padding: { left: '1rem', right: '1rem' },
             }}
           >
             {items.map((item) => (
