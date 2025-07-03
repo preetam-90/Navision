@@ -9,13 +9,13 @@ import { getPosterImageURL } from '@/lib/utils'
 import { SeriesDetailsContent } from '@/components/series/details-content'
 import { SeriesDetailsHero } from '@/components/series/details-hero'
 
-type PageProps = {
+type Props = {
   params: { id: string }
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: Record<string, string | string[] | undefined>
 }
 
 export async function generateMetadata(
-  { params }: PageProps,
+  { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
@@ -39,7 +39,7 @@ export async function generateMetadata(
   }
 }
 
-export default async function TVSeries({ params }: PageProps) {
+export default async function TVSeries({ params }: Props) {
   const { seriesDetails, seriesCredits, similarSeries, recommendedSeries } =
     await populateSeriesDetailsPageData(params.id)
 
