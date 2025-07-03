@@ -4,6 +4,7 @@ import '@splidejs/react-splide/css'
 
 import React from 'react'
 import Link from 'next/link'
+// @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import { motion } from 'framer-motion'
 
@@ -17,6 +18,8 @@ import {
 import { itemRedirect } from '@/lib/utils'
 import { Card } from '@/components/card'
 import { Icons } from '@/components/icons'
+import { cn } from '@/lib/utils'
+import { SliderHorizontalListLoader } from '@/components/loaders/slider-horizontal-list-loader'
 
 interface ListProps {
   title: string
