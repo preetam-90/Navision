@@ -5,16 +5,19 @@ import {
   populateMovieDetailsPage,
 } from '@/services/movies'
 
-import { PageDetailsProps } from '@/types/page-details'
 import { getPosterImageURL } from '@/lib/utils'
 import { MoviesDetailsContent } from '@/components/media/details-content'
 import { MovieDetailsHero } from '@/components/media/details-hero'
 
+type PageProps = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
 export async function generateMetadata(
-  props: PageDetailsProps,
+  { params }: PageProps,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const params = await props.params
   // read route params
   const id = params.id
 
@@ -36,10 +39,9 @@ export async function generateMetadata(
   }
 }
 
-const MoviePage = async (props: PageDetailsProps) => {
-  const params = await props.params
+const MoviePage = async ({ params }: PageProps) => {
   const { movieCredits, movieDetails, similarMovies, recommendedMovies } =
-    await populateMovieDetailsPage(params?.id)
+    await populateMovieDetailsPage(params.id)
 
   return (
     <header className="relative">
