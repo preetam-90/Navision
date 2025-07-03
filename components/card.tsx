@@ -36,16 +36,17 @@ export const Card = ({
         className="relative mb-2 overflow-hidden rounded-lg"
       >
         <div className="relative">
-          <Link href={href} legacyBehavior passHref>
-            <a>
-              <BlurredImage
-                src={getPosterImageURL(item.poster_path)}
-                alt={item.title || item.name || ''}
-                width={500}
-                height={750}
-                className="aspect-[2/3] h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-              />
-            </a>
+          <Link 
+            href={href} 
+            className="block"
+          >
+            <BlurredImage
+              src={getPosterImageURL(item.poster_path)}
+              alt={item.title || item.name || ''}
+              width={500}
+              height={750}
+              className="aspect-[2/3] h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+            />
           </Link>
         </div>
         <div className="absolute right-2 top-2 flex items-center gap-1 rounded-lg bg-background/80 px-1 py-0.5 text-xs font-bold backdrop-blur-sm">
@@ -56,8 +57,11 @@ export const Card = ({
 
       <div className="flex flex-col gap-2">
         <h2 className="line-clamp-1 text-sm font-bold">
-          <Link href={href} legacyBehavior passHref>
-            <a>{item.title || item.name}</a>
+          <Link 
+            href={href}
+            className="hover:underline"
+          >
+            {item.title || item.name}
           </Link>
         </h2>
         <div className="flex items-center gap-2">
