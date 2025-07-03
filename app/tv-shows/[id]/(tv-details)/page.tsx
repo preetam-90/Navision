@@ -9,12 +9,8 @@ import { getPosterImageURL } from '@/lib/utils'
 import { SeriesDetailsContent } from '@/components/series/details-content'
 import { SeriesDetailsHero } from '@/components/series/details-hero'
 
-type TVPageParams = {
-  id: string;
-}
-
 export async function generateMetadata(
-  { params }: { params: TVPageParams },
+  { params }: { params: { id: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
@@ -38,7 +34,7 @@ export async function generateMetadata(
   }
 }
 
-export default async function TVSeries({ params }: { params: TVPageParams }) {
+export default async function TVSeries({ params }: { params: { id: string } }) {
   const { seriesDetails, seriesCredits, similarSeries, recommendedSeries } =
     await populateSeriesDetailsPageData(params.id)
 

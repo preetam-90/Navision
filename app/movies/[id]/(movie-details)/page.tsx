@@ -9,12 +9,8 @@ import { getPosterImageURL } from '@/lib/utils'
 import { MoviesDetailsContent } from '@/components/media/details-content'
 import { MovieDetailsHero } from '@/components/media/details-hero'
 
-type MoviePageParams = {
-  id: string;
-}
-
 export async function generateMetadata(
-  { params }: { params: MoviePageParams },
+  { params }: { params: { id: string } },
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   // read route params
@@ -38,7 +34,7 @@ export async function generateMetadata(
   }
 }
 
-export default async function MoviePage({ params }: { params: MoviePageParams }) {
+export default async function MoviePage({ params }: { params: { id: string } }) {
   const { movieCredits, movieDetails, similarMovies, recommendedMovies } =
     await populateMovieDetailsPage(params.id)
 
