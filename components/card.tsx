@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { CalendarDays } from 'lucide-react'
@@ -26,60 +26,46 @@ export const Card = ({
   itemType = 'movie',
   isTruncateOverview = true,
 }: CardProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  
   return (
-    <div 
-      className="relative"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      {item?.poster_path && (
+    <div className="group flex flex-col">
+      <motion.div
+        variants={CARD_VARIANT}
+        whileHover="hover"
+        className="relative mb-2 overflow-hidden rounded-lg"
+      >
         <Link href={`${itemRedirect(itemType)}/${item.id}`}>
-          <motion.div
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-            className="pointer-events-none lg:pointer-events-auto"
-          >
-            <motion.div className="group relative" variants={CARD_VARIANT}>
-              <BlurredImage
-                src={`${getPosterImageURL(item.poster_path)}`}
-                alt="Movie"
-                width={250}
-                height={375}
-                className="cursor-pointer rounded-md object-cover shadow-xl"
-              />
-            </motion.div>
-          </motion.div>
+          <BlurredImage
+            src={getPosterImageURL(item.poster_path)}
+            alt={item.title || item.name || ''}
+            width={500}
+            height={750}
+            className="aspect-[2/3] h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+          />
         </Link>
-      )}
-      
-      {isHovered && (
-        <div className="absolute left-full ml-2 hidden w-80 rounded-md border bg-popover p-4 text-popover-foreground shadow-md outline-none z-50 md:block">
-          <div className="space-y-1">
-            <div className="flex items-center justify-between gap-2">
-              <h4 className="text-sm font-semibold">
-                {item?.title} ({item?.release_date?.slice(0, 4)})
-              </h4>
-              <Badge>{numberRounder(item.vote_average)}</Badge>
-            </div>
-            <p className="text-sm">
-              {isTruncateOverview && item.overview.length > 100 ? (
-                <>{item.overview.slice(0, 100)}...</>
-              ) : (
-                item.overview.slice(0, 400)
-              )}
-            </p>
-            <div className="flex items-center pt-2">
-              <CalendarDays className="mr-2 size-4 opacity-70" />{' '}
-              <span className="text-xs text-muted-foreground">
-                {dateFormatter(item?.release_date, true)}
-              </span>
-            </div>
-          </div>
+        <div className="absolute right-2 top-2 flex items-center gap-1 rounded-lg bg-background/80 px-1 py-0.5 text-xs font-bold backdrop-blur-sm">
+          <span>{numberRounder(item.vote_average)}</span>
+          <span className="text-yellow-400">★</span>
         </div>
-      )}
+      </motion.div>
+
+      <div className="flex flex-col gap-2">
+        <h2 className="line-clamp-1 text-sm font-bold">
+          <Link href={`${itemRedirect(itemType)}/${item.id}`}>
+            {item.title || item.name}
+          </Link>
+        </h2>
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="text-xs">
+            {itemType === 'movie' ? 'Movie' : 'TV Show'}
+          </Badge>
+          {item.release_date && (
+            <div className="flex items-center gap-1 text-xs text-muted-foreground">
+              <CalendarDays className="h-3 w-3" />
+              <span>{dateFormatter(item.release_date)}</span>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }
