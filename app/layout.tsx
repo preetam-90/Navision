@@ -2,7 +2,6 @@ import '@/styles/globals.css'
 
 import type { Metadata } from 'next'
 // import Script from 'next/script'
-import { CSPostHogProvider } from '@/providers/posthog-provider'
 import { QueryProvider } from '@/providers/query-provider'
 import { ToastProvider } from '@/providers/toast-provider'
 import { GoogleTagManager } from '@next/third-parties/google'
@@ -96,7 +95,7 @@ export default function RootLayout({ children, modal }: RootLayoutProps) {
             <SiteHeader />
             <div className="h-full flex-1 overflow-x-hidden">
               <QueryProvider>
-                <CSPostHogProvider>{children}</CSPostHogProvider>
+                {children}
               </QueryProvider>
               <ToastProvider />
               <Footer />
