@@ -14,7 +14,7 @@ interface PageParams {
 }
 
 interface PageProps {
-  params: PageParams;
+  params: Readonly<PageParams>;
   searchParams: { [key: string]: string | string[] | undefined };
 }
 
