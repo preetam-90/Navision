@@ -26,6 +26,8 @@ export const Card = ({
   itemType = 'movie',
   isTruncateOverview = true,
 }: CardProps) => {
+  const href = `${itemRedirect(itemType)}/${item.id}`;
+  
   return (
     <div className="group flex flex-col">
       <motion.div
@@ -33,15 +35,19 @@ export const Card = ({
         whileHover="hover"
         className="relative mb-2 overflow-hidden rounded-lg"
       >
-        <Link href={`${itemRedirect(itemType)}/${item.id}`}>
-          <BlurredImage
-            src={getPosterImageURL(item.poster_path)}
-            alt={item.title || item.name || ''}
-            width={500}
-            height={750}
-            className="aspect-[2/3] h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
-          />
-        </Link>
+        <div className="relative">
+          <Link href={href} legacyBehavior passHref>
+            <a>
+              <BlurredImage
+                src={getPosterImageURL(item.poster_path)}
+                alt={item.title || item.name || ''}
+                width={500}
+                height={750}
+                className="aspect-[2/3] h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-105"
+              />
+            </a>
+          </Link>
+        </div>
         <div className="absolute right-2 top-2 flex items-center gap-1 rounded-lg bg-background/80 px-1 py-0.5 text-xs font-bold backdrop-blur-sm">
           <span>{numberRounder(item.vote_average)}</span>
           <span className="text-yellow-400">★</span>
@@ -50,8 +56,8 @@ export const Card = ({
 
       <div className="flex flex-col gap-2">
         <h2 className="line-clamp-1 text-sm font-bold">
-          <Link href={`${itemRedirect(itemType)}/${item.id}`}>
-            {item.title || item.name}
+          <Link href={href} legacyBehavior passHref>
+            <a>{item.title || item.name}</a>
           </Link>
         </h2>
         <div className="flex items-center gap-2">
