@@ -26,7 +26,7 @@ interface ListProps {
 
 export const List = ({ title, items, itemType = 'movie' }: ListProps) => {
   return (
-    <nav className="py-10">
+    <nav className="py-10 w-full">
       <motion.div
         initial="rest"
         whileHover="hover"
@@ -61,21 +61,25 @@ export const List = ({ title, items, itemType = 'movie' }: ListProps) => {
         <p className="text-lg text-gray-400">No items to show</p>
       )}
       {items.length > 0 && (
-        <Splide
-          options={{
-            rewind: true,
-            gap: '1.5rem',
-            arrows: true,
-            pagination: false,
-            autoWidth: true,
-          }}
-        >
-          {items.map((item) => (
-            <SplideSlide key={item.id}>
-              <Card item={item} itemType={itemType} />
-            </SplideSlide>
-          ))}
-        </Splide>
+        <div className="w-full overflow-hidden">
+          <Splide
+            options={{
+              rewind: true,
+              gap: '1.5rem',
+              arrows: true,
+              pagination: false,
+              autoWidth: true,
+              width: '100%',
+              padding: { left: 0, right: '1rem' },
+            }}
+          >
+            {items.map((item) => (
+              <SplideSlide key={item.id}>
+                <Card item={item} itemType={itemType} />
+              </SplideSlide>
+            ))}
+          </Splide>
+        </div>
       )}
     </nav>
   )
