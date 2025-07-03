@@ -3,6 +3,7 @@ import React from 'react'
 import type { Metadata } from 'next'
 import { QueryProvider } from '@/providers/query-provider'
 import { ToastProvider } from '@/providers/toast-provider'
+import { PostHogProvider } from '@/providers/posthog-provider'
 
 import { siteConfig } from '@/config/site'
 import { fontSans } from '@/lib/fonts'
@@ -30,15 +31,17 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head />
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-        <div className="flex flex-col">
-          <SiteHeader />
-          <div className="h-full flex-1 overflow-x-hidden">
-            <QueryProvider>{children}</QueryProvider>
-            <ToastProvider />
-            <Footer />
-            {modal && modal}
+        <PostHogProvider>
+          <div className="flex flex-col">
+            <SiteHeader />
+            <div className="h-full flex-1 overflow-x-hidden">
+              <QueryProvider>{children}</QueryProvider>
+              <ToastProvider />
+              <Footer />
+              {modal && modal}
+            </div>
           </div>
-        </div>
+        </PostHogProvider>
       </body>
     </html>
   )
