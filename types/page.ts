@@ -3,6 +3,6 @@ export type PageParams = {
 }
 
 export type PageProps<T = any> = {
-  params: T;
+  params: T & { then?: never };
   searchParams?: { [key: string]: string | string[] | undefined };
 } 
