@@ -15,6 +15,10 @@
 
 **Your ultimate movie and TV show tracking companion with a sleek, modern interface**
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=24&duration=4000&pause=1000&color=FFC107&center=true&vCenter=true&width=1000&lines=Lights...+Camera...+%F0%9F%8E%A5+Action!;Experience+cinema+like+never+before;Track+everything+you+watch+effortlessly" alt="Typing SVG" />
+</p>
+
 <p>
   <a href="https://bhaiflix.vercel.app/">View Demo</a> •
   <a href="#features">Features</a> •
@@ -25,14 +29,61 @@
   <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>
 </p>
+
 </div>
+
+---
+
+## 📋 Table of Contents
+
+- [Quick Start](#quick-start)
+- [Features](#features)
+- [Demo](#demo)
+- [Screenshots](#screenshots)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Connect with Me](#connect-with-me)
+
+---
+
+## 🚀 Quick Start
+
+Get Navision up and running in minutes:
+
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/preetam-90/Navision.git
+   cd Navision
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install
+   ```
+
+3. **Set up environment variables**
+   - Create a `.env.local` file (see [Installation](#installation) for details)
+
+4. **Run the dev server**
+   ```bash
+   pnpm dev
+   ```
+
+5. **Open in browser**
+   - Visit [http://localhost:3000](http://localhost:3000)
+
+---
 
 ## ✨ Features
 
 <table>
   <tr>
     <td>
-      <img src="https://raw.githubusercontent.com/preetam-90/assets/main/features-icon.png" width="40" height="40"/>
+      <img src="https://raw.githubusercontent.com/preetam-90/assets/main/features-icon.png" width="40" height="40" alt="Features Icon"/>
     </td>
     <td><h3>Key Features</h3></td>
   </tr>
@@ -48,27 +99,74 @@
 - 🔄 **Real-Time Updates** - Stay up to date with the latest releases
 - 🔐 **No Account Required** - Use without signing up
 
+---
+
 ## 🔥 Demo
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/preetam-90/assets/main/navision-demo.gif" alt="Navision Demo" width="80%"/>
 </div>
 
+---
+
+## 📸 Screenshots
+
 <details>
-<summary>📸 More Screenshots</summary>
+<summary>Screenshot Gallery</summary>
 <br>
 
 <div align="center">
-  <p><strong>Home Page</strong></p>
-  <img src="https://raw.githubusercontent.com/preetam-90/assets/main/home.png" alt="Home Page" width="80%"/>
-  
-  <p><strong>Movie Details</strong></p>
-  <img src="https://raw.githubusercontent.com/preetam-90/assets/main/movie-details.png" alt="Movie Details" width="80%"/>
-  
-  <p><strong>TV Show Browser</strong></p>
-  <img src="https://raw.githubusercontent.com/preetam-90/assets/main/tv-shows.png" alt="TV Shows" width="80%"/>
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://i.postimg.cc/DzYzx8jn/Screenshot-20250705-134320.png" alt="Home Page" width="400px"/><br/><b>Home Page</b>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/kgqDGrR3/Screenshot-20250705-135044-1.png" alt="Movie Details" width="400px"/><br/><b>Movie Details</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://i.postimg.cc/xTKc9jC3/Screenshot-20250705-135021-2.png" alt="TV Show Browser" width="400px"/><br/><b>TV Show Browser</b>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/Vs0JHWPT/Screenshot-20250705-134934-2.png" alt="Search Results" width="400px"/><br/><b>Search Results</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://i.postimg.cc/HxRVkVXB/Screenshot-20250705-134914.png" alt="Dark Mode" width="400px"/><br/><b>Dark Mode</b>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/Ls4qCdmB/Screenshot-20250705-134849-1.png" alt="Watch History" width="400px"/><br/><b>Watch History</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://i.postimg.cc/28vB3FHv/Screenshot-20250705-134836-1.png" alt="Real-Time Updates" width="400px"/><br/><b>Real-Time Updates</b>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/wv71zhy1/Screenshot-20250705-134703-1.png" alt="No Account Required" width="400px"/><br/><b>No Account Required</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="https://i.postimg.cc/PNGhBDYn/Screenshot-20250705-134400.png" alt="Responsive Design" width="400px"/><br/><b>Responsive Design</b>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/SQHMytGk/Screenshot-20250705-134341-1.png" alt="Advanced Search" width="400px"/><br/><b>Advanced Search</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="https://i.postimg.cc/x8fLLkcY/Screenshot-20250705-135201.png" alt="Lightning Fast Performance" width="400px"/><br/><b>Lightning Fast Performance</b>
+    </td>
+  </tr>
+</table>
 </div>
 </details>
+
+---
 
 ## 🛠️ Tech Stack
 
@@ -78,8 +176,10 @@
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel" />
-  <img src="https://img.shields.io/badge/TMDB_API-01B4E4?style=for-the-badge&logo=themoviedatabase&logoColor=white" alt="TMDB API" />
+  <img src="https://img.shields.io/badge/TMDB_API-01B4E4?style=for-the-badge&logo=themoviedb&logoColor=white" alt="TMDB API" />
 </div>
+
+---
 
 ## 📦 Installation
 
@@ -105,12 +205,25 @@ pnpm install
 
 3. **Set up environment variables**
 
-Create a `.env.local` file in the root directory and add:
+Create a `.env.local` file in the root directory and add the following. **Replace placeholders with your actual API keys**:
 
 ```
-NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
-NEXT_PUBLIC_BASE_URL=http://localhost:3000
+TMDB_API_KEY='your_tmdb_api_key'
+NEXT_PUBLIC_TMDB_BASEURL="https://api.themoviedb.org/3"
+TMDB_HEADER_KEY='your_tmdb_header_key'
+NEXT_PUBLIC_BASE_URL='http://localhost:3000'
+NEXT_PUBLIC_STREAMING_MOVIES_API_URL='https://vidsrc.to/embed'
+NEXT_PUBLIC_SEARCH_ACTOR_GOOGLE='https://www.google.com/search?q='
+NEXT_PUBLIC_IMAGE_CACHE_HOST_URL='https://image.tmdb.org/t/p'
+GOOGLE_GTM_ID='your_google_gtm_id'
+GOOGLE_MEASUREMENT_ID='your_google_measurement_id'
+NEXT_PUBLIC_POSTHOG_KEY='your_posthog_key'
+NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
 ```
+
+**Important:** Never commit sensitive API keys to a public repository. Obtain your keys from [TMDB](https://www.themoviedb.org/documentation/api), Google, and PostHog.
+
+---
 
 ## 🚀 Usage
 
@@ -144,12 +257,14 @@ yarn build
 pnpm build
 ```
 
+---
+
 ## 📝 Roadmap
 
 <table>
   <tr>
     <td>
-      <img src="https://raw.githubusercontent.com/preetam-90/assets/main/roadmap-icon.png" width="40" height="40"/>
+      <img src="https://raw.githubusercontent.com/preetam-90/assets/main/roadmap-icon.png" width="40" height="40" alt="Roadmap Icon"/>
     </td>
     <td><h3>Future Plans</h3></td>
   </tr>
@@ -166,6 +281,8 @@ pnpm build
 - [ ] Integration with more streaming platforms
 - [ ] Mobile app version
 
+---
+
 ## 🤝 Contributing
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
@@ -176,9 +293,15 @@ Contributions are what make the open-source community such an amazing place to l
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+Check out the [Roadmap](#roadmap) or [Issues](https://github.com/preetam-90/Navision/issues) for ideas to contribute to!
+
+---
+
 ## 📄 License
 
-Distributed under the MIT License. See `LICENSE.md` for more information.
+Distributed under the MIT License. See [LICENSE.md](https://github.com/preetam-90/Navision/blob/main/LICENSE.md) for more information.
+
+---
 
 ## 👤 Connect with Me
 
@@ -189,12 +312,12 @@ Distributed under the MIT License. See `LICENSE.md` for more information.
   <a href="https://www.instagram.com/preetam_90/">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
   </a>
-  <a href="https://vidionai.me">
-    <img src="https://img.shields.io/badge/Website-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Website" />
+  <a href="mailto:preetam@engineer.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=mail.ru&logoColor=white" alt="Email" />
   </a>
 </div>
 
-<hr>
+---
 
 <div align="center">
   
