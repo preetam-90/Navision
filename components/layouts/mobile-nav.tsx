@@ -59,6 +59,24 @@ export function MobileNav({ items }: MobileNavProps) {
             </div>
           ))}
         </div>
+        <div className="space-y-6 px-9 pb-10">
+          <Link
+            href={siteConfig.links.buyMeACoffee}
+            target="_blank"
+            rel="noreferrer"
+            className={cn(
+              buttonVariants({
+                variant: 'default',
+                size: 'default',
+                className: 'w-full',
+              }),
+              'text-white'
+            )}
+          >
+            <Icons.buyMeACoffee className="mr-2 size-5" />
+            Buy me a coffee
+          </Link>
+        </div>
       </SheetContent>
     </Sheet>
   )

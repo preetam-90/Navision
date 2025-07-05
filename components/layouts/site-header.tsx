@@ -29,6 +29,12 @@ export function SiteHeader() {
                 <span className="sr-only">Instagram</span>
               </div>
             </Link>
+            <Link href={siteConfig.links.buyMeACoffee} target="_blank" rel="noreferrer">
+              <div className={buttonVariants({ size: 'icon', variant: 'ghost' })}>
+                <Icons.buyMeACoffee className="size-5" />
+                <span className="sr-only">Buy me a coffee</span>
+              </div>
+            </Link>
           </nav>
         </div>
       </div>
