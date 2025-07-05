@@ -80,24 +80,17 @@ Get Navision up and running in minutes:
 
 ## ✨ Features
 
-<table>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/preetam-90/assets/main/features-icon.png" width="40" height="40" alt="Features Icon"/>
-    </td>
-    <td><h3>Key Features</h3></td>
-  </tr>
-</table>
+**Key Features**
 
-- 🎞️ **Track Movies & TV Shows** - Keep tabs on what you've watched and want to watch
-- 🔍 **Advanced Search** - Find your favorite content with powerful search capabilities
-- 🌙 **Dark Mode** - Easy on the eyes, perfect for night viewing
-- 📱 **Responsive Design** - Works perfectly on all devices
-- 🚀 **Lightning Fast** - Built with Next.js for optimal performance
-- 📊 **Detailed Information** - Get comprehensive details about movies and TV shows
-- 📝 **Watch History** - Track your viewing history automatically
-- 🔄 **Real-Time Updates** - Stay up to date with the latest releases
-- 🔐 **No Account Required** - Use without signing up
+- 🎞️ **Track Movies & TV Shows** - Keep tabs on what you've watched and want to watch  
+- 🔍 **Advanced Search** - Find your favorite content with powerful search capabilities  
+- 🌙 **Dark Mode** - Easy on the eyes, perfect for night viewing  
+- 📱 **Responsive Design** - Works perfectly on all devices  
+- 🚀 **Lightning Fast** - Built with Next.js for optimal performance  
+- 📊 **Detailed Information** - Get comprehensive details about movies and TV shows  
+- 📝 **Watch History** - Track your viewing history automatically  
+- 🔄 **Real-Time Updates** - Stay up to date with the latest releases  
+- 🔐 **No Account Required** - Use without signing up  
 
 ---
 
@@ -116,53 +109,52 @@ Get Navision up and running in minutes:
 <br>
 
 <div align="center">
+
 <table>
   <tr>
     <td align="center">
-      <img src="https://i.postimg.cc/DzYzx8jn/Screenshot-20250705-134320.png" alt="Home Page" width="400px"/><br/><b>Home Page</b>
+      <img src="https://i.postimg.cc/DzYzx8jn/Screenshot-20250705-134320.png" width="250px" alt="Home Page"/><br/><b>Home Page</b>
     </td>
     <td align="center">
-      <img src="https://i.postimg.cc/kgqDGrR3/Screenshot-20250705-135044-1.png" alt="Movie Details" width="400px"/><br/><b>Movie Details</b>
+      <img src="https://i.postimg.cc/kgqDGrR3/Screenshot-20250705-135044-1.png" width="250px" alt="Movie Details"/><br/><b>Movie Details</b>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/xTKc9jC3/Screenshot-20250705-135021-2.png" width="250px" alt="TV Show Browser"/><br/><b>TV Show Browser</b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.postimg.cc/xTKc9jC3/Screenshot-20250705-135021-2.png" alt="TV Show Browser" width="400px"/><br/><b>TV Show Browser</b>
+      <img src="https://i.postimg.cc/Vs0JHWPT/Screenshot-20250705-134934-2.png" width="250px" alt="Search Results"/><br/><b>Search Results</b>
     </td>
     <td align="center">
-      <img src="https://i.postimg.cc/Vs0JHWPT/Screenshot-20250705-134934-2.png" alt="Search Results" width="400px"/><br/><b>Search Results</b>
+      <img src="https://i.postimg.cc/HxRVkVXB/Screenshot-20250705-134914.png" width="250px" alt="Dark Mode"/><br/><b>Dark Mode</b>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/Ls4qCdmB/Screenshot-20250705-134849-1.png" width="250px" alt="Watch History"/><br/><b>Watch History</b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.postimg.cc/HxRVkVXB/Screenshot-20250705-134914.png" alt="Dark Mode" width="400px"/><br/><b>Dark Mode</b>
+      <img src="https://i.postimg.cc/28vB3FHv/Screenshot-20250705-134836-1.png" width="250px" alt="Real-Time Updates"/><br/><b>Real-Time Updates</b>
     </td>
     <td align="center">
-      <img src="https://i.postimg.cc/Ls4qCdmB/Screenshot-20250705-134849-1.png" alt="Watch History" width="400px"/><br/><b>Watch History</b>
+      <img src="https://i.postimg.cc/wv71zhy1/Screenshot-20250705-134703-1.png" width="250px" alt="No Account Required"/><br/><b>No Account Required</b>
+    </td>
+    <td align="center">
+      <img src="https://i.postimg.cc/PNGhBDYn/Screenshot-20250705-134400.png" width="250px" alt="Responsive Design"/><br/><b>Responsive Design</b>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="https://i.postimg.cc/28vB3FHv/Screenshot-20250705-134836-1.png" alt="Real-Time Updates" width="400px"/><br/><b>Real-Time Updates</b>
+      <img src="https://i.postimg.cc/SQHMytGk/Screenshot-20250705-134341-1.png" width="250px" alt="Advanced Search"/><br/><b>Advanced Search</b>
     </td>
     <td align="center">
-      <img src="https://i.postimg.cc/wv71zhy1/Screenshot-20250705-134703-1.png" alt="No Account Required" width="400px"/><br/><b>No Account Required</b>
+      <img src="https://i.postimg.cc/x8fLLkcY/Screenshot-20250705-135201.png" width="250px" alt="Lightning Fast Performance"/><br/><b>Lightning Fast Performance</b>
     </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://i.postimg.cc/PNGhBDYn/Screenshot-20250705-134400.png" alt="Responsive Design" width="400px"/><br/><b>Responsive Design</b>
-    </td>
-    <td align="center">
-      <img src="https://i.postimg.cc/SQHMytGk/Screenshot-20250705-134341-1.png" alt="Advanced Search" width="400px"/><br/><b>Advanced Search</b>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2">
-      <img src="https://i.postimg.cc/x8fLLkcY/Screenshot-20250705-135201.png" alt="Lightning Fast Performance" width="400px"/><br/><b>Lightning Fast Performance</b>
-    </td>
+    <td align="center"></td>
   </tr>
 </table>
+
 </div>
 </details>
 
@@ -184,24 +176,22 @@ Get Navision up and running in minutes:
 ## 📦 Installation
 
 1. **Clone the repository**
-
-```bash
-git clone https://github.com/preetam-90/Navision.git
-cd Navision
-```
+   ```bash
+   git clone https://github.com/preetam-90/Navision.git
+   cd Navision
+   ```
 
 2. **Install dependencies**
+   ```bash
+   # Using npm
+   npm install
 
-```bash
-# Using npm
-npm install
+   # Using yarn
+   yarn
 
-# Using yarn
-yarn
-
-# Using pnpm (recommended)
-pnpm install
-```
+   # Using pnpm (recommended)
+   pnpm install
+   ```
 
 3. **Set up environment variables**
 
@@ -228,47 +218,38 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
 ## 🚀 Usage
 
 1. **Start development server**
+   ```bash
+   # Using npm
+   npm run dev
 
-```bash
-# Using npm
-npm run dev
+   # Using yarn
+   yarn dev
 
-# Using yarn
-yarn dev
-
-# Using pnpm
-pnpm dev
-```
+   # Using pnpm
+   pnpm dev
+   ```
 
 2. **Open your browser**
 
 Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
 
 3. **Build for production**
+   ```bash
+   # Using npm
+   npm run build
 
-```bash
-# Using npm
-npm run build
+   # Using yarn
+   yarn build
 
-# Using yarn
-yarn build
-
-# Using pnpm
-pnpm build
-```
+   # Using pnpm
+   pnpm build
+   ```
 
 ---
 
 ## 📝 Roadmap
 
-<table>
-  <tr>
-    <td>
-      <img src="https://raw.githubusercontent.com/preetam-90/assets/main/roadmap-icon.png" width="40" height="40" alt="Roadmap Icon"/>
-    </td>
-    <td><h3>Future Plans</h3></td>
-  </tr>
-</table>
+**Future Plans**
 
 - [x] ~~Basic movie and TV show tracking~~
 - [x] ~~Dark mode implementation~~
@@ -320,18 +301,14 @@ Distributed under the MIT License. See [LICENSE.md](https://github.com/preetam-9
 ---
 
 <div align="center">
-  
   <a href="https://github.com/preetam-90">
     <img src="https://img.shields.io/github/followers/preetam-90?label=Follow&style=social" alt="GitHub followers" />
   </a>
-  
   <a href="https://visitcount.itsvg.in">
     <img src="https://visitcount.itsvg.in/api?id=preetam-90-navision&label=Repo%20Views&color=6&icon=5&pretty=true" alt="Visitor Count" />
   </a>
-  
   <p>
     <strong>⭐ If you like this project, please star it! ⭐</strong><br>
     Made with ❤️ by <a href="https://github.com/preetam-90">Preetam Kumar</a>
   </p>
-
 </div>
