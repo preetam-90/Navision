@@ -77,17 +77,6 @@ export function Footer() {
           </Link> */}
         </p>
       </div>
-      <div className="flex items-center justify-center">
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.buyMeACoffee}
-          className={cn('text-white', buttonVariants({ variant: 'outline' }))}
-        >
-          <Icons.buyMeACoffee className="mr-2 size-5" />
-          Buy me a coffee
-        </Link>
-      </div>
     </footer>
   )
 }

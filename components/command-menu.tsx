@@ -219,35 +219,6 @@ export function CommandMenu({ ...props }: CommandDialogProps) {
               <Home className="mr-2 size-4" />
               Home
             </CommandItem>
-            <CommandItem
-              className="cursor-pointer"
-              onSelect={() =>
-                runCommand(() =>
-                  window.open(`https://vidionai.me`, '_blank')
-                )
-              }
-            >
-              <div className="flex items-center gap-4">
-                <Avatar>
-                  <AvatarImage src="/personal-logo.png" />
-                  <AvatarFallback>G</AvatarFallback>
-                </Avatar>
-                Portfolio
-              </div>
-            </CommandItem>
-            <CommandItem
-              className="cursor-pointer"
-              onSelect={() =>
-                runCommand(() =>
-                  window.open(`https://buymeacoffee.com/preetam90`, '_blank')
-                )
-              }
-            >
-              <div className="flex items-center gap-4">
-                <Icons.buyMeACoffee className="size-5" />
-                Buy me a coffee
-              </div>
-            </CommandItem>
           </CommandGroup>
           <CommandSeparator />
         </CommandList>

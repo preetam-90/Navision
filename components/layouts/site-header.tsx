@@ -25,8 +25,8 @@ export function SiteHeader() {
             </Link>
             <Link href={siteConfig.links.twitter} target="_blank" rel="noreferrer">
               <div className={buttonVariants({ size: 'icon', variant: 'ghost' })}>
-                <Icons.twitter className="size-5 fill-current" />
-                <span className="sr-only">Twitter</span>
+                <Icons.instagram className="size-5" />
+                <span className="sr-only">Instagram</span>
               </div>
             </Link>
           </nav>

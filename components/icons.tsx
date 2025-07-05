@@ -8,7 +8,7 @@ import {
   Search,
   StarIcon,
   SunMedium,
-  Twitter,
+  Instagram,
 } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
@@ -18,7 +18,7 @@ export type Icon = LucideIcon
 export const Icons = {
   sun: SunMedium,
   moon: Moon,
-  twitter: Twitter,
+  instagram: Instagram,
   menu: Menu,
   star: StarIcon,
   playIcon: PlayCircle,
