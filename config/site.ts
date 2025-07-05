@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: 'Reely',
-  description: 'Reely is a movie and tv show tracker built by Mohamed Gado.',
+  name: 'Navision',
+  description: 'Navision is a movie and tv show tracker built by Preetam Kumar.',
   mainNav: [
     {
       title: 'Home',
@@ -31,29 +31,29 @@ export const siteConfig = {
     },
   ],
   personalLogo:
-    'https://pbs.twimg.com/profile_images/1446549954231738370/IVkXC16N_400x400.jpg',
+    'https://i.postimg.cc/R03LypvV/PXL-20230705-131447762-PORTRAIT.jpg',
   links: {
-    twitter: 'https://twitter.com/Sadge1996',
-    github: 'https://github.com/Vette1123',
-    website: 'https://www.mohamedgado.com/',
-    buyMeACoffee: 'https://buymeacoffee.com/vetteotp',
+    twitter: 'https://www.instagram.com/preetam_90',
+    github: 'https://github.com/preetam-90',
+    website: 'https://vidionai.me',
+    buyMeACoffee: 'https://buymeacoffee.com/preetam90',
   },
   openGraph: {
     locale: 'en_US',
     type: 'website',
   },
-  email: 'boogado@yahoo.com',
-  websiteURL: 'https://www.reely.site',
-  twitterTag: '@Sadge1996',
+  email: 'preetamkumar8873@gmail.com',
+  websiteURL: 'https://bhaiflix.vercel.app',
+  twitterTag: '@preetam_90',
   image:
-    'https://pbs.twimg.com/profile_images/1446549954231738370/IVkXC16N_400x400.jpg',
+    'https://i.postimg.cc/R03LypvV/PXL-20230705-131447762-PORTRAIT.jpg',
   keywords: [
-    'Reely',
-    'Reely Site',
-    'Reely Tracker',
+    'Navision',
+    'Navision Site',
+    'Navision Tracker',
     'Movie Tracker',
     'TV Show Tracker',
-    'Reely Live',
+    'Bhaiflix',
     'Software Engineer',
     'Frontend Engineer',
     'Web Developer',
@@ -61,9 +61,9 @@ export const siteConfig = {
     'TypeScript',
     'JavaScript',
     'Node.js',
-    'Mohamed Gado',
-    'Gado',
-    'Gado Mohamed',
+    'Preetam Kumar',
+    'Preetam',
+    'Kumar Preetam',
     'React Developer',
     'React Engineer',
     'React.js',

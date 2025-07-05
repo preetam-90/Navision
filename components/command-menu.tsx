@@ -223,7 +223,7 @@ export function CommandMenu({ ...props }: CommandDialogProps) {
               className="cursor-pointer"
               onSelect={() =>
                 runCommand(() =>
-                  window.open(`https://www.mohamedgado.com/`, '_blank')
+                  window.open(`https://vidionai.me`, '_blank')
                 )
               }
             >
@@ -239,7 +239,7 @@ export function CommandMenu({ ...props }: CommandDialogProps) {
               className="cursor-pointer"
               onSelect={() =>
                 runCommand(() =>
-                  window.open(`https://buymeacoffee.com/vetteotp`, '_blank')
+                  window.open(`https://buymeacoffee.com/preetam90`, '_blank')
                 )
               }
             >
