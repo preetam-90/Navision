@@ -21,13 +21,13 @@
 
 <p>
   <a href="https://bhaiflix.vercel.app/">View Demo</a> •
-  <a href="#features">Features</a> •
-  <a href="#tech-stack">Tech Stack</a> •
-  <a href="#installation">Installation</a> •
-  <a href="#usage">Usage</a> •
-  <a href="#roadmap">Roadmap</a> •
-  <a href="#contributing">Contributing</a> •
-  <a href="#license">License</a>
+  <a href="#-features">Features</a> •
+  <a href="#-tech-stack">Tech Stack</a> •
+  <a href="#-installation">Installation</a> •
+  <a href="#-usage">Usage</a> •
+  <a href="#-roadmap">Roadmap</a> •
+  <a href="#-contributing">Contributing</a> •
+  <a href="#-license">License</a>
 </p>
 
 </div>
@@ -35,18 +35,17 @@
 ---
 
 ## 📋 Table of Contents
-
-- [Quick Start](#quick-start)
-- [Features](#features)
-- [Demo](#demo)
-- [Screenshots](#screenshots)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-- [Connect with Me](#connect-with-me)
+- [🚀 Quick Start](#-quick-start)
+- [✨ Features](#-features)
+- [🔥 Demo](#-demo)
+- [📸 Screenshots](#-screenshots)
+- [🛠️ Tech Stack](#-tech-stack)
+- [📦 Installation](#-installation)
+- [🚀 Usage](#-usage)
+- [📝 Roadmap](#-roadmap)
+- [🤝 Contributing](#-contributing)
+- [📄 License](#-license)
+- [👤 Connect with Me](#-connect-with-me)
 
 ---
 
@@ -54,26 +53,26 @@
 
 Get Navision up and running in minutes:
 
-1. **Clone the repo**
+1. **Clone the repo**  
    ```bash
    git clone https://github.com/preetam-90/Navision.git
    cd Navision
    ```
 
-2. **Install dependencies**
+2. **Install dependencies**  
    ```bash
    pnpm install
    ```
 
-3. **Set up environment variables**
-   - Create a `.env.local` file (see [Installation](#installation) for details)
+3. **Set up environment variables**  
+   - Create a `.env.local` file (see [Installation](#-installation) for details)
 
-4. **Run the dev server**
+4. **Run the dev server**  
    ```bash
    pnpm dev
    ```
 
-5. **Open in browser**
+5. **Open in browser**  
    - Visit [http://localhost:3000](http://localhost:3000)
 
 ---
@@ -177,13 +176,13 @@ Get Navision up and running in minutes:
 
 ## 📦 Installation
 
-1. **Clone the repository**
+1. **Clone the repository**  
    ```bash
    git clone https://github.com/preetam-90/Navision.git
    cd Navision
    ```
 
-2. **Install dependencies**
+2. **Install dependencies**  
    ```bash
    # Using npm
    npm install
@@ -219,7 +218,7 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
 
 ## 🚀 Usage
 
-1. **Start development server**
+1. **Start development server**  
    ```bash
    # Using npm
    npm run dev
@@ -231,11 +230,10 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
    pnpm dev
    ```
 
-2. **Open your browser**
+2. **Open your browser**  
+   Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
 
-Navigate to [http://localhost:3000](http://localhost:3000) to see the application running.
-
-3. **Build for production**
+3. **Build for production**  
    ```bash
    # Using npm
    npm run build
@@ -270,13 +268,13 @@ Navigate to [http://localhost:3000](http://localhost:3000) to see the applicatio
 
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the Project  
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)  
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)  
+4. Push to the Branch (`git push origin feature/AmazingFeature`)  
+5. Open a Pull Request  
 
-Check out the [Roadmap](#roadmap) or [Issues](https://github.com/preetam-90/Navision/issues) for ideas to contribute to!
+Check out the [Roadmap](#-roadmap) or [Issues](https://github.com/preetam-90/Navision/issues) for ideas to contribute to!
 
 ---
 
