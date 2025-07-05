@@ -97,7 +97,9 @@ Get Navision up and running in minutes:
 ## 🔥 Demo
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/preetam-90/assets/main/navision-demo.gif" alt="Navision Demo" width="80%"/>
+  <a href="https://bhaiflix.vercel.app/">
+    <img src="https://i.postimg.cc/L6Fq1gg1/navison.gif" alt="Navision Demo" width="80%" />
+  </a>
 </div>
 
 ---
