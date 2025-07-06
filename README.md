@@ -2,65 +2,26 @@
 
 # 🎬 Navision - Movie & TV Tracker 🍿
 
-<div class="banner" style="margin-bottom: 2rem;">
+<div class="banner">
   <svg width="100%" height="180" xmlns="http://www.w3.org/2000/svg">
-    <style>
-      @keyframes gradientShift {
-        0% { stop-color: #FF5F6D; }
-        50% { stop-color: #FFC371; }
-        100% { stop-color: #FF5F6D; }
-      }
-      @keyframes textFloat {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-      }
-      @keyframes textGlow {
-        0% { text-shadow: 0 0 5px rgba(255,255,255,0.8); }
-        50% { text-shadow: 0 0 20px rgba(255,255,255,0.8), 0 0 30px rgba(255,95,109,0.4); }
-        100% { text-shadow: 0 0 5px rgba(255,255,255,0.8); }
-      }
-      @keyframes iconSpin {
-        from { transform: rotate(0deg) translateY(0); }
-        to { transform: rotate(360deg) translateY(0); }
-      }
-      .gradient-bg-start {
-        animation: gradientShift 8s ease-in-out infinite;
-      }
-      .gradient-bg-end {
-        animation: gradientShift 8s ease-in-out infinite reverse;
-      }
-      .title-text {
-        animation: textGlow 3s ease-in-out infinite, textFloat 6s ease-in-out infinite;
-      }
-      .subtitle-text {
-        animation: textFloat 6s ease-in-out infinite reverse;
-      }
-      .icon-left {
-        animation: iconSpin 10s linear infinite;
-      }
-      .icon-right {
-        animation: iconSpin 10s linear infinite reverse;
-      }
-    </style>
     <defs>
       <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" class="gradient-bg-start" stop-color="#FF5F6D" />
-        <stop offset="100%" class="gradient-bg-end" stop-color="#FFC371" />
+        <stop offset="0%" stop-color="#FF5F6D" />
+        <stop offset="100%" stop-color="#FFC371" />
       </linearGradient>
       <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
         <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#000" flood-opacity="0.3" />
       </filter>
     </defs>
     <rect width="100%" height="100%" fill="url(#grad)" rx="15" filter="url(#shadow)" />
-    <circle cx="60" cy="90" r="20" fill="#ffffff" opacity="0.2" class="icon-left" />
-    <circle cx="740" cy="90" r="20" fill="#ffffff" opacity="0.2" class="icon-right" />
-    <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle" class="title-text">NAVISION</text>
-    <text x="50%" y="75%" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle" class="subtitle-text">Your Ultimate Movie & TV Show Companion</text>
+    <circle cx="60" cy="90" r="20" fill="#ffffff" opacity="0.2" />
+    <circle cx="740" cy="90" r="20" fill="#ffffff" opacity="0.2" />
+    <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle">NAVISION</text>
+    <text x="50%" y="75%" font-family="Arial, sans-serif" font-size="20" fill="white" text-anchor="middle">Your Ultimate Movie & TV Show Companion</text>
   </svg>
 </div>
 
-<div class="badges" style="margin: 1.5rem 0;">
+<div class="badges">
   <a href="https://github.com/preetam-90/Navision/stargazers">
     <img src="https://img.shields.io/github/stars/preetam-90/Navision?style=for-the-badge&logo=github&color=gold" alt="GitHub stars" />
   </a>
@@ -78,7 +39,7 @@
   </a>
 </div>
 
-<div class="profile-badges" style="margin-bottom: 2rem;">
+<div class="profile-badges">
   <a href="https://github.com/preetam-90">
     <img src="https://komarev.com/ghpvc/?username=preetam-90&label=Profile%20Views&color=0e75b6&style=for-the-badge" alt="Profile Views" />
   </a>
@@ -87,8 +48,8 @@
   </a>
 </div>
 
-<div class="description" style="margin: 0 auto; max-width: 800px;">
-  <h3 style="font-style: italic; margin-bottom: 2rem;">
+<div class="description">
+  <h3>
     Your ultimate movie and TV show tracking companion with a sleek, modern interface
   </h3>
 
@@ -97,31 +58,31 @@
   </a>
 </div>
 
-<div class="quick-links" style="margin: 2rem 0;">
-  <a href="https://bhaiflix.vercel.app/" style="text-decoration: none; margin: 0 10px; padding: 8px 16px; background-image: linear-gradient(to right, #FF5F6D, #FFC371); color: white; border-radius: 20px; font-weight: bold; display: inline-block; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+<div class="quick-links">
+  <a href="https://bhaiflix.vercel.app/">
     🌐 View Demo
   </a>
-  <a href="#features" style="text-decoration: none; margin: 0 10px; padding: 8px 16px; background-image: linear-gradient(to right, #3F5EFB, #FC466B); color: white; border-radius: 20px; font-weight: bold; display: inline-block; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+  <a href="#features">
     ✨ Features
   </a>
-  <a href="#tech-stack" style="text-decoration: none; margin: 0 10px; padding: 8px 16px; background-image: linear-gradient(to right, #11998e, #38ef7d); color: white; border-radius: 20px; font-weight: bold; display: inline-block; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+  <a href="#tech-stack">
     🛠️ Tech Stack
   </a>
-  <a href="#installation" style="text-decoration: none; margin: 0 10px; padding: 8px 16px; background-image: linear-gradient(to right, #8E2DE2, #4A00E0); color: white; border-radius: 20px; font-weight: bold; display: inline-block; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+  <a href="#installation">
     🚀 Installation
   </a>
-  <a href="#contributing" style="text-decoration: none; margin: 0 10px; padding: 8px 16px; background-image: linear-gradient(to right, #FF8008, #FFC837); color: white; border-radius: 20px; font-weight: bold; display: inline-block; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+  <a href="#contributing">
     🤝 Contribute
   </a>
 </div>
 
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 📋 Table of Contents
 
-<div class="toc" style="background-color: #f8f9fa; border-left: 4px solid #FF5F6D; padding: 15px; border-radius: 0 10px 10px 0; margin-bottom: 2rem;">
+<div class="toc">
 
 - [🔍 Quick Start](#-quick-start)
 - [✨ Features](#-features)
@@ -137,20 +98,20 @@
 
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FFC371, #FF5F6D, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 🔍 Quick Start
 
-<div class="quick-links-section" style="display: flex; justify-content: space-around; margin: 2rem 0;">
-  <a href="https://bhaiflix.vercel.app/" style="display: inline-block; padding: 10px 20px; background: linear-gradient(135deg, #FF5F6D 0%, #FFC371 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+<div class="quick-links-section">
+  <a href="https://bhaiflix.vercel.app/">
     🌐 View Live Demo
   </a>
-  <a href="https://github.com/preetam-90/Navision" style="display: inline-block; padding: 10px 20px; background: linear-gradient(135deg, #3F5EFB 0%, #FC466B 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease;">
+  <a href="https://github.com/preetam-90/Navision">
     ⭐ Star on GitHub
   </a>
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## ✨ Features
 
@@ -200,7 +161,7 @@
 
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 🛠️ Tech Stack
 
@@ -220,7 +181,7 @@
 
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 🎬 Demo
 
@@ -241,7 +202,7 @@
 
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 📸 Screenshots
 
@@ -335,7 +296,7 @@
 </div>
 </details>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## ⚙️ Installation
 
@@ -395,7 +356,7 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
 
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 📱 Usage
 
@@ -434,7 +395,7 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
 
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 🔮 Roadmap
 
@@ -442,9 +403,10 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
 
 <table style="width: 100%; border-collapse: separate; border-spacing: 0; margin: 1.5rem 0;">
   <tr style="background: linear-gradient(135deg, rgba(255,95,109,0.1), rgba(255,195,113,0.1));">
-    <td style="padding: 15px; border-radius: 10px 0 0 0; width: 60px;">
-      <img src="https://raw.githubusercontent.com/preetam-90/assets/main/roadmap-icon.png" width="40" height="40" alt="Roadmap Icon" style="display: block; margin: 0 auto;">
-    </td>
+<td style="padding: 15px; border-radius: 10px 0 0 0; width: 60px;">
+  <img src="https://img.icons8.com/color/48/000000/road.png" width="40" height="40" alt="Roadmap Icon" style="display: block; margin: 0 auto;">
+</td>
+
     <td style="padding: 15px; border-radius: 0 10px 0 0;">
       <h3 style="margin: 0; color: #FF5F6D;">Future Plans</h3>
     </td>
@@ -505,7 +467,7 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
 
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 🤝 Contributing
 
@@ -538,7 +500,7 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
   </div>
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 📄 License
 
@@ -568,7 +530,7 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
   </div>
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
 ## 👤 Connect with Me
 
@@ -598,73 +560,19 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
   </div>
 </div>
 
-<div style="height: 2px; background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent); margin: 2rem 0;"></div>
+<hr>
 
-<div align="center" class="footer-container" style="background: linear-gradient(120deg, rgba(255,128,8,0.05), rgba(255,200,55,0.05)); padding: 20px; border-radius: 15px; margin-bottom: 2rem;">
-  <div class="star-message" style="margin-bottom: 20px;">
-    <h3 style="color: #FF5F6D; margin-top: 0;">⭐ If you like this project, please star it! ⭐</h3>
-    <p style="margin-bottom: 20px;">Your support keeps me motivated to improve Navision</p>
-    <a href="https://github.com/preetam-90/Navision/stargazers" class="star-button" style="display: inline-block; padding: 10px 30px; background: linear-gradient(135deg, #FF5F6D 0%, #FFC371 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 15px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)'">
+<div align="center" class="footer-container">
+  <div class="star-message">
+    <h3>⭐ If you like this project, please star it! ⭐</h3>
+    <p>Your support keeps me motivated to improve Navision</p>
+    <a href="https://github.com/preetam-90/Navision/stargazers" class="star-button">
       Star on GitHub
     </a>
   </div>
   
-  <div class="footer-note" style="margin-top: 30px;">
-    <p style="margin-bottom: 5px;">Made with ❤️ by <a href="https://github.com/preetam-90" style="color: #3F5EFB; font-weight: bold;">Preetam Kumar</a></p>
-    <p class="footer-date" style="margin-top: 5px; color: #666; font-size: 0.9em;">Last updated: July 2025</p>
+  <div class="footer-note">
+    <p>Made with ❤️ by <a href="https://github.com/preetam-90">Preetam Kumar</a></p>
+    <p class="footer-date">Last updated: July 2025</p>
   </div>
 </div>
-
-<style>
-  /* Base Styles */
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-  }
-
-  a {
-    color: #FF5F6D;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-  
-  a:hover {
-    color: #FFC371;
-  }
-  
-  /* Header and Navigation */
-  .nav-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
-  }
-  
-  .nav-button {
-    background: linear-gradient(135deg, #FF5F6D 0%, #FFC371 100%);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    display: inline-block;
-    text-decoration: none;
-  }
-  
-  .nav-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 7px 14px rgba(0,0,0,0.15);
-    color: white;
-  }
-  
-  /* Gradient Horizontal Rule */
-  .gradient-hr {
-    height: 2px;
-    background-image: linear-gradient(to right, transparent, #FF5F6D, #FFC371, transparent);
-    border: none;
-    margin: 2rem 0;
-  }
-</style>
-</rewritten_file>
