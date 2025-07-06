@@ -399,19 +399,7 @@ NEXT_PUBLIC_POSTHOG_HOST='https://eu.posthog.com'
 
 ## 🔮 Roadmap
 
-<div class="roadmap-container" style="background: linear-gradient(120deg, rgba(17,153,142,0.05), rgba(56,239,125,0.05)); padding: 20px; border-radius: 15px; margin-bottom: 2rem;">
 
-<table style="width: 100%; border-collapse: separate; border-spacing: 0; margin: 1.5rem 0;">
-  <tr style="background: linear-gradient(135deg, rgba(255,95,109,0.1), rgba(255,195,113,0.1));">
-<td style="padding: 15px; border-radius: 10px 0 0 0; width: 60px;">
-  <img src="https://img.icons8.com/color/48/000000/road.png" width="40" height="40" alt="Roadmap Icon" style="display: block; margin: 0 auto;">
-</td>
-
-    <td style="padding: 15px; border-radius: 0 10px 0 0;">
-      <h3 style="margin: 0; color: #FF5F6D;">Future Plans</h3>
-    </td>
-  </tr>
-</table>
 
 <div class="roadmap-items" style="padding: 0 20px;">
   <div class="roadmap-item" style="display: flex; align-items: center; margin: 15px 0; padding: 10px; border-radius: 10px; background-color: #f8f9fa; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateX(10px)'" onmouseout="this.style.transform='translateX(0)'">
