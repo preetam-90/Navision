@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
         'animated-watch-now':
-          'bg-primary text-secondary-foreground text-2xl font-medium font-sans hover:scale-105 transition-transform animate-border bg-linear-to-r from-red-500 via-purple-500 to-blue-500 bg-size-[400%_400%]',
+          'bg-primary text-secondary-foreground text-2xl font-medium font-sans hover:scale-105 transition-transform animate-border bg-gradient-to-r from-red-500 via-purple-500 to-blue-500 bg-size-[400%_400%]',
         watchNow:
           'bg-primary text-secondary-foreground text-xl font-medium font-sans hover:scale-105 transition-transform',
       },
