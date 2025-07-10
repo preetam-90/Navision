@@ -62,18 +62,23 @@ const getTrendingMediaForHeroSlider = async (
 
     return combinedResults // Ensure we only take up to 40 items
   } catch (error) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.error('Error fetching trending media for hero slider:', error)
-    }
+    console.error('Error fetching trending media for hero slider:', error)
     return [] // Return empty array or throw error as per desired error handling
   }
 }
 
 const populateHomePageData = async (): Promise<MultiRequestProps> => {
   try {
-    // Use allSettled to prevent one failed request from causing the entire operation to fail
-    const results = await Promise.allSettled([
-      getTrendingMediaForHeroSlider(),
+    const [
+      trendingMediaHeroResponse, // Replaced nowPlayingResponse
+      latestTrendingResponse,
+      popularMoviesResponse,
+      allTimeTopRatedResponse,
+      latestTrendingSeries,
+      popularSeriesResponse,
+      allTimeTopRatedSeries,
+    ] = await Promise.all([
+      getTrendingMediaForHeroSlider(), // Replaced getNowPlayingMovies()
       getLatestTrendingMovies(),
       getPopularMovies(),
       getAllTimeTopRatedMovies(),
@@ -83,189 +88,60 @@ const populateHomePageData = async (): Promise<MultiRequestProps> => {
     ])
 
     return {
-      trendingMediaForHero: results[0].status === 'fulfilled' ? results[0].value || [] : [],
-      latestTrendingMovies: results[1].status === 'fulfilled' ? results[1].value?.results || [] : [],
-      popularMovies: results[2].status === 'fulfilled' ? results[2].value?.results || [] : [],
-      allTimeTopRatedMovies: results[3].status === 'fulfilled' ? results[3].value?.results || [] : [],
-      latestTrendingSeries: results[4].status === 'fulfilled' ? results[4].value?.results || [] : [],
-      popularSeries: results[5].status === 'fulfilled' ? results[5].value?.results || [] : [],
-      allTimeTopRatedSeries: results[6].status === 'fulfilled' ? results[6].value?.results || [] : [],
+      trendingMediaForHero: trendingMediaHeroResponse || [], // Changed from nowPlayingMovies
+      latestTrendingMovies: latestTrendingResponse?.results || [],
+      popularMovies: popularMoviesResponse?.results || [],
+      allTimeTopRatedMovies: allTimeTopRatedResponse?.results || [],
+      latestTrendingSeries: latestTrendingSeries?.results || [],
+      popularSeries: popularSeriesResponse?.results || [],
+      allTimeTopRatedSeries: allTimeTopRatedSeries?.results || [],
     }
   } catch (error: any) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.error('Failed to load home page data:', error)
-    }
-    // Return empty arrays rather than throwing
-    return {
-      trendingMediaForHero: [],
-      latestTrendingMovies: [],
-      popularMovies: [],
-      allTimeTopRatedMovies: [],
-      latestTrendingSeries: [],
-      popularSeries: [],
-      allTimeTopRatedSeries: [],
-    }
+    console.error(error, 'error')
+    throw new Error(error)
   }
 }
 
 const getMovieDetailsById = async (id: string, params: Param = {}) => {
   const url = `movie/${id}?language=en-US`
-  try {
-    return await fetchClient.get<MovieDetails>(url, params, true)
-  } catch (error) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.error(`Error fetching details for movie ${id}:`, error)
-    }
-    return {
-      id: parseInt(id),
-      title: 'Unable to load content',
-      overview: 'Content temporarily unavailable',
-      poster_path: '',
-      backdrop_path: '',
-      adult: false,
-      genres: [],
-      homepage: '',
-      imdb_id: '',
-      original_language: '',
-      original_title: '',
-      release_date: '',
-      budget: 0,
-      revenue: 0,
-      runtime: 0,
-      status: '',
-      tagline: '',
-      vote_average: 0,
-      vote_count: 0,
-      production_companies: [],
-      production_countries: [],
-      spoken_languages: [],
-      belongs_to_collection: {
-        id: 0,
-        name: '',
-        poster_path: '',
-        backdrop_path: ''
-      },
-      popularity: 0,
-      video: false
-    }
-  }
+  return fetchClient.get<MovieDetails>(url, params, true)
 }
 
 const getMovieCreditsById = async (id: string, params: Param = {}) => {
   const url = `movie/${id}/credits?language=en-US`
-  try {
-    return await fetchClient.get<Credit>(url, params, true)
-  } catch (error) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.error(`Error fetching credits for movie ${id}:`, error)
-    }
-    return { id: parseInt(id), cast: [], crew: [] }
-  }
+  return fetchClient.get<Credit>(url, params, true)
 }
 
 const getSimilarMoviesById = async (id: string, params: Param = {}) => {
   const url = `movie/${id}/similar?language=en-US`
-  try {
-    return await fetchClient.get<MovieResponse>(url, params, true)
-  } catch (error) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.error(`Error fetching similar movies for ${id}:`, error)
-    }
-    return { page: 1, results: [], total_pages: 0, total_results: 0 }
-  }
+  return fetchClient.get<MovieResponse>(url, params, true)
 }
 
 const getRecommendedMoviesById = async (id: string, params: Param = {}) => {
   const url = `movie/${id}/recommendations?language=en-US`
-  try {
-    return await fetchClient.get<MovieResponse>(url, params, true)
-  } catch (error) {
-    if (process.env.NODE_ENV !== 'production') {
-      console.error(`Error fetching recommended movies for ${id}:`, error)
-    }
-    return { page: 1, results: [], total_pages: 0, total_results: 0 }
-  }
+  return fetchClient.get<MovieResponse>(url, params, true)
 }
 
 const populateMovieDetailsPage = async (
   id: string
 ): Promise<MultiMovieDetailsRequestProps> => {
-  // Create a fallback data object
-  const fallbackData: MultiMovieDetailsRequestProps = {
-    movieDetails: {
-      id: parseInt(id),
-      title: 'Unable to load content',
-      overview: 'Content temporarily unavailable',
-      poster_path: '',
-      backdrop_path: '',
-      adult: false,
-      genres: [],
-      homepage: '',
-      imdb_id: '',
-      original_language: '',
-      original_title: '',
-      release_date: '',
-      budget: 0,
-      revenue: 0,
-      runtime: 0,
-      status: '',
-      tagline: '',
-      vote_average: 0,
-      vote_count: 0,
-      production_companies: [],
-      production_countries: [],
-      spoken_languages: [],
-      belongs_to_collection: {
-        id: 0,
-        name: '',
-        poster_path: '',
-        backdrop_path: ''
-      },
-      popularity: 0,
-      video: false
-    },
-    movieCredits: { id: parseInt(id), cast: [], crew: [] },
-    similarMovies: [],
-    recommendedMovies: []
-  };
-
-  // In production mode, suppress console errors to prevent client-side error messages
-  const originalConsoleError = console.error;
-  if (process.env.NODE_ENV === 'production') {
-    console.error = () => {};
-  }
-
   try {
-    // Use allSettled to prevent one failed request from causing the entire operation to fail
-    const results = await Promise.allSettled([
-      getMovieDetailsById(id),
-      getMovieCreditsById(id),
-      getSimilarMoviesById(id),
-      getRecommendedMoviesById(id),
-    ]);
-    
-    // Extract values or use fallbacks for rejected promises
-    const movieDetails = results[0].status === 'fulfilled' ? results[0].value : fallbackData.movieDetails;
-    const movieCredits = results[1].status === 'fulfilled' ? results[1].value : fallbackData.movieCredits;
-    const similarMovies = results[2].status === 'fulfilled' ? results[2].value?.results || [] : [];
-    const recommendedMovies = results[3].status === 'fulfilled' ? results[3].value?.results || [] : [];
-    
+    const [movieDetails, movieCredits, similarMovies, recommendedMovies] =
+      await Promise.all([
+        getMovieDetailsById(id),
+        getMovieCreditsById(id),
+        getSimilarMoviesById(id),
+        getRecommendedMoviesById(id),
+      ])
     return {
       movieDetails,
       movieCredits,
-      similarMovies,
-      recommendedMovies,
-    };
-  } catch (error: any) {
-    // Only log errors in development
-    if (process.env.NODE_ENV !== 'production') {
-      console.error('Failed to load movie details page data:', error);
+      similarMovies: similarMovies?.results || [],
+      recommendedMovies: recommendedMovies?.results || [],
     }
-    // Return fallback data if anything fails
-    return fallbackData;
-  } finally {
-    // Always restore console.error
-    console.error = originalConsoleError;
+  } catch (error: any) {
+    console.error(error, 'error')
+    throw new Error(error)
   }
 }
 
